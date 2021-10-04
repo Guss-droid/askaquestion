@@ -1,0 +1,72 @@
+#newPass-page{
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+  background-color: #2a2a72;
+  background-image: linear-gradient(
+    315deg,
+     #2a2a72 0%,
+     #009ffd 74%
+  );
+
+  aside{
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 80px;
+    color: #FFF;
+    
+
+    img{
+      max-width: 320px;
+    }
+  }
+
+  main{
+    flex: 8;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mainContent{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    align-items: stretch;
+    border: 1px solid #00F4;
+    padding: 10px;
+    box-shadow: 10px 10px 10px #FFF4;
+    border-radius: 20px;
+    background: #FFF;
+
+    >img{
+      align-self: center;
+    }
+
+    form{
+      margin: 0 10px 0 10px;
+      input{
+        height: 50px;
+        border-radius: 8px;
+        padding: 0 16px;
+        background: #FFF;
+        margin-bottom: 10px;
+        border: 1px solid #A8A8B3;
+      }
+
+      button{
+        margin-top: 16px;
+        width: 50px;
+      }
+
+      button, input{
+        width: 100%;
+      }
+    }
+  }
+}

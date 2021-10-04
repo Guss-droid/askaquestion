@@ -1,0 +1,154 @@
+#login-page{
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+  background-color: #2a2a72;
+  background-image: linear-gradient(
+    315deg,
+     #2a2a72 0%,
+     #009ffd 74%
+  );
+
+  aside{
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 80px;
+    color: #FFF;
+    
+
+    img{
+      max-width: 320px;
+    }
+
+    strong{
+      font: 700 36px 'Poppins', sans-serif;
+      line-height: 42px;
+      margin-top: 16px;
+    }
+
+    p{
+      font: 500 36px 'Poppins';
+      font-size: 24px;
+      line-height: 32px;
+      margin-top: 16px;
+      color: #F8F8F8;
+    }
+  }
+
+  main{
+    flex: 8;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mainContent{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    align-items: stretch;
+    border: 1px solid #00F4;
+    padding: 10px;
+    box-shadow: 10px 10px 10px #FFF4;
+    border-radius: 20px;
+    background: #FFF;
+
+    >img{
+      align-self: center;
+    }
+
+    h2{
+      font-size: 24px;
+      margin: 64px 0 24px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    form{
+      margin: 0 10px 0 10px;
+      input{
+        height: 50px;
+        border-radius: 8px;
+        padding: 0 16px;
+        background: #FFF;
+        margin-bottom: 10px;
+        border: 1px solid #A8A8B3;
+      }
+
+      button{
+        margin-top: 16px;
+        width: 50px;
+      }
+
+      button, input{
+        width: 100%;
+      }
+    }
+
+    p{
+      font-size: 14px;
+      color: #737388;
+      margin-top: 16px;
+
+      a{
+        color: #5999f9;
+        cursor: pointer;
+      }
+    }
+
+    .createAccount{
+      margin-top: 16px;
+      font-weight: 500;
+      height: 50px;
+      border-radius: 8px;
+      background: #3f86b6;
+      color: #FFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 0;
+      cursor: pointer;
+      transition: filter 0.2s;
+
+      &:hover{
+        filter: brightness(0.9);
+      }
+    }
+
+    .separator{
+      font-size: 14px;
+      color: #A8A8B3;
+
+      margin: 32px 0;
+      align-items: center;
+      display: flex;
+
+      &::after{
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: #A8A8B3;
+        margin-left: 16px;
+      }
+
+      &::before{
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: #A8A8B3;
+        margin-right: 16px;
+      }
+    }
+    
+    span{
+      border: 1px solid #FF0000;
+      padding: 10px;
+      margin-top: 15px;
+      color: #FF0000;
+    }
+  }
+}

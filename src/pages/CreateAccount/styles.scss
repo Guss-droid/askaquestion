@@ -97,5 +97,14 @@
         filter: brightness(0.9);
       }
     }
+
+    span{
+      border: 1px solid #FF0000;
+      padding: 10px;
+      margin-top: 15px;
+      color: #FF0000;
+      border-radius: 8px;
+    }
+
   }
 }

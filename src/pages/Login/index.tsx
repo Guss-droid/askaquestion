@@ -6,6 +6,7 @@ import IllustrantionImg from '../../assets/illustration.svg';
 import LogoImg from '../../assets/logo.svg'
 
 import './styles.scss';
+import { api } from '../../services/api';
 
 type IUserProps = string
 type IPassProps = string
@@ -15,21 +16,30 @@ export function Login() {
 
   const history = useHistory()
 
-  const [user, setUser] = useState<IUserProps>('')
-  const [password, setPassword] = useState<IPassProps>('')
+  const [email, setEmail] = useState<IUserProps>()
+  const [password, setPassword] = useState<IPassProps>()
   const [error, setError] = useState<IErrorProps>('')
 
   function newAccount() {
     history.push('/CreateAccount')
   }
 
-  function handleSend(e: FormEvent) {
+  async function handleSend(e: FormEvent) {
     e.preventDefault()
-    if (!user || !password) {
+    if (!email || !password) {
       setError('Preencha todos os campos')
-      console.log("a")
     } else {
-      history.push('/Home')
+      try {
+        await api.post('/login', { email, password })
+          .then(res => {
+            const token = res.data;
+            localStorage.setItem('Token', JSON.stringify(token));
+          })
+          
+        history.push('/Home')
+      } catch (err) {
+        setError('Email ou senha incorreto')
+      }
     }
 
   }
@@ -56,9 +66,9 @@ export function Login() {
           <form onSubmit={handleSend} >
             <input
               type="text"
-              value={user}
-              onChange={e => setUser(e.target.value)}
-              placeholder="Email ou Nome"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="Email"
             />
             <input
               type="password"
@@ -76,7 +86,6 @@ export function Login() {
               :
               <></>
           }
-          <p>Esqueceu a senha?<a href="/NewPass"> Clique aqui</a></p>
         </div>
       </main>
     </div>
